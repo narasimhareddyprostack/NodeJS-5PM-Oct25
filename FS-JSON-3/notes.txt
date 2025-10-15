@@ -1,0 +1,2 @@
+read employes.json file 
+and write all male employees into male.json file.
