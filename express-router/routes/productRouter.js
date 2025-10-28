@@ -11,4 +11,4 @@ router.put("/:pid",(req,resp)=>{
     return resp.json({"msg":"Product Updated","Product Id":prod_Id})
 })
 
-export default router;
+export default router; //ES6 Export
