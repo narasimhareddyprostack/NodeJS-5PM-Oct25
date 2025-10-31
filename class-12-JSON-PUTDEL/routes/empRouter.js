@@ -73,6 +73,31 @@ router.put("/update/:eid",async(req,resp)=>{
     return resp.status(200).json({"msg":"Employee Updated"})
 })
 
+/*
+Delete
+------
+usage: delete emp by eid 
+URL:http://127.0.0.1:8080/emp/delete/101
+Method type:DELETE
+Required Fields:none
+Access Type:public
+*/
+router.delete("/delete/:eid",async(req,resp)=>{
+    let empId=parseInt(req.params.eid);
+    let employees=await getEmployees();
+    let employee=employees.find((emp)=>{
+        return emp.eid === empId
+    })
+    if(!employee){
+        return resp.status(404).json({"msg":"Employee not Exits"})
+    }
+    let remaining_Employees=employees.filter((emp)=>{
+        return emp.eid!==empId;
+    })
+    await saveEmployees(remaining_Employees)
+    return resp.status(200).json({"msg":"Employee Deleted"})
+})
+
 //supporting functions
 let getEmployees=()=>{
     let emp_file=path.join(process.cwd(),"data","employees.json")
