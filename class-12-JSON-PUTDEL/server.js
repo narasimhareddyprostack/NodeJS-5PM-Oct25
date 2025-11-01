@@ -1,11 +1,15 @@
 import express from 'express'
 import morgan from 'morgan'
 import chalk from 'chalk'
+import dotenv from 'dotenv'
+
 import empRouter from './routes/empRouter.js'
 const app=express()
 
-let port=8080
-let host='127.0.0.1'
+//load dev env values
+dotenv.config({'path':'./config/dev.env'})
+let port=process.env.PORT;
+let host=process.env.HOST;
 
 /*
 usage: Application Root

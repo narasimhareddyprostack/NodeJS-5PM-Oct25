@@ -1,0 +1,22 @@
+1.npm init -y
+  update package.json - enable JS ES6
+2.Install required dependencies
+  npm i express morgan chalk mongoose dotenv cors
+3.Create Project Structure
+
+config-->dev.env 
+models-->Product.js
+routes-->productRouter.js
+
+app.js/server.js 
+.gitignore
+----------------------------------
+Rest API/End Points
+-------------------
+Application Root Request
+------------------------
+usage:Root Request 
+URL:http://127.0.0.1:8080/
+Method:GET 
+Required Fields:None 
+Access Type:Public 
