@@ -1,0 +1,30 @@
+npm init -y
+
+npm i express morgan chalk mongoose cors jsonwebtoken dotenv
+
+Rest API - information
+----------------------
+Create 
+----------
+usage:create new User
+API URL:http://127.0.0.1:8080/api/create 
+Method Type:POST
+Required Fields:uname,email,password,mobile
+Access Type:Public
+
+User Login
+-----------
+usage:User Login
+API URL:http://127.0.0.1:8080/api/login 
+Method Type:POST
+Required Fields:email,password
+Access Type:Public
+
+User Logout
+-------------
+usage: User Logout 
+API URL:http://127.0.0.1:8080/api/logout
+Method Type:GET
+Required Fields:None/ Req Header has token
+Access Type:Public
+
